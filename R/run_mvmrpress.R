@@ -4,7 +4,7 @@
 #' @param summs_exposure GWAS summary statistics for exposure, list, each element should be a data.frame including SNP, A1, A2, BETA, SE
 #' @param summs_outcome GWAS summary statistics for outcome, a data.frame including SNP, A1, A2, BETA, SE
 #' @param P_hat correlation matrix of exposures
-#' @param snp.use rsid of the IVs
+#' @param snp_use rsid of the IVs
 #' @param lambda_theta Parameter
 #' @param mu_gamma Parameter
 #' @param n_boots Number of boostraps
@@ -17,13 +17,14 @@
 #'
 #' @export
 #'
-run_mvmrpress <- function(summs_exposure, summs_outcome, snp.use, P_hat, para_theta=0.01, para_gamma=10,
+run_mvmrpress <- function(summs_exposure, summs_outcome, snp_use, P_hat, para_theta=0.01, para_gamma=10,
                           n_boots=100, n_cores=100,n_iter=200,n_iter_boot=100){
   #setwd('/home/songs/mvmrbayes/0406new/share_snp_clumping_format')
   # load(paste0('/home/songs/mvmrbayes/0406new/res/',trait2,'_',
   #             trait1,'.adjust1.newP1.',
   #             'lambda',lambda_theta,'_mu',mu_gamma,'.RData'))
   #summs2 <- summs_outcome
+  snp.use <- snp_use
   n_exposure <- length(summs_exposure)
   lambda_theta=para_theta
   mu_gamma=para_gamma

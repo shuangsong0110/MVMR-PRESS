@@ -1,12 +1,11 @@
 Package: MVMRPRESS
 Type: Package
-Title: What the Package Does in One 'Title Case' Line
+Title: A robust penalized-regression-based method for multivariable Mendelian randomization using GWAS summary statistics
 Version: 0.1.2
 Date: 2023-12-24
 Author: Shuang Song
 Maintainer: Shuang Song <song-s19@mails.tsinghua.edu.cn>
-Description: One paragraph description of what the package
-      does as one or more full sentences.
+Description: Implementation codes for "A robust penalized-regression-based method for multivariable Mendelian randomization using GWAS summary statistics"
 License: GPL (>= 2)
 Depends: Rcpp (>= 1.0.7), data.table, Matrix, parallel
 LinkingTo: Rcpp, RcppEigen

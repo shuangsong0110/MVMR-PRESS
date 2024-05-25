@@ -7,7 +7,7 @@
 run_mvmrpress(
   summs_exposure,
   summs_outcome,
-  snp.use,
+  snp_use,
   P_hat,
   para_theta = 0.01,
   para_gamma = 10,
@@ -22,7 +22,7 @@ run_mvmrpress(
 
 \item{summs_outcome}{GWAS summary statistics for outcome, a data.frame including SNP, A1, A2, BETA, SE}
 
-\item{snp.use}{rsid of the IVs}
+\item{snp_use}{rsid of the IVs}
 
 \item{P_hat}{correlation matrix of exposures}
 
