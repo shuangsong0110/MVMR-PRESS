@@ -54,6 +54,7 @@ res <- run_mvmrpress(summs_exposure = SUMMARY_STATS_FOR_EXPOSURE (required),
 
 ## :key: Output
 The `run_mvmrpress` returns a list with 4 elements:
+
 **beta_est**: estimated effect sizes for all exposures
 
 **beta_est_SE**: estimated SE of effect sizes
