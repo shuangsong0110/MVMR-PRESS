@@ -80,3 +80,12 @@ Please prepare the GWAS summary statistics for the outcome and each of the expos
 **SE**: Standard errors of GWAS effect sizes
 
 ##  :bulb: A toy example
+```
+library(MVMRPRESS)
+data('dat')
+res <- run_mvmrpress(summs_exposure = dat_exposure,
+                     summs_outcome = dat_outcome,
+                     snp.use = snp_use,
+                     P_hat = P_hat)
+
+```
