@@ -27,7 +27,7 @@ devtools::install_github("shuangsong0110/MVMR-PRESS")
 library(MVMRPRESS)
 res <- run_mvmrpress(summs_exposure = SUMMARY_STATS_FOR_EXPOSURE (required),
                      summs_outcome = SUMMARY_STATS_FOR_OUTCOME (required),
-                     snp.use = INSTRUMENTAL_VARIABLES (required),
+                     snp_use = INSTRUMENTAL_VARIABLES (required),
                      P_hat = CORRELATION_MATRIX_OF_EXPOSURES (required),
                      para_theta=PARAMETER_THETA,
                      para_gamma=PARAMETER_GAMMA,
@@ -85,7 +85,7 @@ library(MVMRPRESS)
 data('dat')
 res <- run_mvmrpress(summs_exposure = dat_exposure,
                      summs_outcome = dat_outcome,
-                     snp.use = snp_use,
+                     snp_use = snp_use,
                      P_hat = P_hat)
 
 ```
