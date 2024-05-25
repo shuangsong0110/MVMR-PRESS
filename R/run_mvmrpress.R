@@ -17,13 +17,16 @@
 #'
 #' @export
 #'
-run_mvmrpress <- function(summs_exposure, summs_outcome, snp.use, P_hat, lambda_theta=0.01, mu_gamma=10,
+run_mvmrpress <- function(summs_exposure, summs_outcome, snp.use, P_hat, para_theta=0.01, para_gamma=10,
                           n_boots=100, n_cores=100,n_iter=200,n_iter_boot=100){
   #setwd('/home/songs/mvmrbayes/0406new/share_snp_clumping_format')
   # load(paste0('/home/songs/mvmrbayes/0406new/res/',trait2,'_',
   #             trait1,'.adjust1.newP1.',
   #             'lambda',lambda_theta,'_mu',mu_gamma,'.RData'))
   #summs2 <- summs_outcome
+  n_exposure <- length(summs_exposure)
+  lambda_theta=para_theta
+  mu_gamma=para_gamma
   summs2 <- summs_outcome[match(snp.use, summs_outcome$SNP),]
   summs2$A1 <- toupper(summs2$A1)
   summs2$A2 <- toupper(summs2$A2)
@@ -56,10 +59,10 @@ run_mvmrpress <- function(summs_exposure, summs_outcome, snp.use, P_hat, lambda_
                        P_hat=P_hat,by=by,byse=byse,lambda_theta=lambda_theta,mu_gamma=mu_gamma,
                        sigma_B=NULL,theta=theta_s, gamma=gamma_s,iter=n_iter_boot,return.se=F,
                        mc.preschedule=F,mc.cores=n_cores)
-  boot.mat <- matrix(unlist(res.boot),nrow=6)
+  boot.mat <- matrix(unlist(res.boot),nrow=n_exposure)
   res_mvmrpress <- list()
   res_mvmrpress$beta_est <- res$theta
-  res_mvmrpress$beta_est_SE <- (res$theta/apply(boot.mat,1,sd)/sqrt(6)*1.96)
+  res_mvmrpress$beta_est_SE <- (res$theta/apply(boot.mat,1,sd)/sqrt(n_exposure)*1.96)
   res_mvmrpress$beta_Z <- res_mvmrpress$beta_est/res_mvmrpress$beta_est_SE
   res_mvmrpress$beta_P <- 2*pnorm(-abs(res_mvmrpress$beta_Z))
 
@@ -101,6 +104,7 @@ MVMR_Bayes=function(bx,bxse,P_hat,by,byse,lambda_theta,mu_gamma,
   diff <- 100
   theta0 <- rep(100,k)
   while(diff>5e-4 & i<=iter){
+    cat(paste0('Iteration ',i,' / ',iter,' ...','\n'))
     print(theta)
     #for(i in 1:iter){
     #print(i)

@@ -9,8 +9,8 @@ run_mvmrpress(
   summs_outcome,
   snp.use,
   P_hat,
-  lambda_theta = 0.01,
-  mu_gamma = 10,
+  para_theta = 0.01,
+  para_gamma = 10,
   n_boots = 100,
   n_cores = 100,
   n_iter = 200,
@@ -26,10 +26,6 @@ run_mvmrpress(
 
 \item{P_hat}{correlation matrix of exposures}
 
-\item{lambda_theta}{Parameter}
-
-\item{mu_gamma}{Parameter}
-
 \item{n_boots}{Number of boostraps}
 
 \item{n_cores}{Number of cores running in parallel}
@@ -37,6 +33,10 @@ run_mvmrpress(
 \item{n_iter}{Iterations}
 
 \item{n_iter_boot}{Iterations in bootstrap}
+
+\item{lambda_theta}{Parameter}
+
+\item{mu_gamma}{Parameter}
 }
 \value{
 result

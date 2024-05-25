@@ -1,7 +1,7 @@
 Package: MVMRPRESS
 Type: Package
 Title: What the Package Does in One 'Title Case' Line
-Version: 0.1.0
+Version: 0.1.2
 Date: 2023-12-24
 Author: Shuang Song
 Maintainer: Shuang Song <song-s19@mails.tsinghua.edu.cn>
@@ -12,3 +12,4 @@ Depends: Rcpp (>= 1.0.7), data.table, Matrix, parallel
 LinkingTo: Rcpp, RcppEigen
 RoxygenNote: 7.1.2
 Encoding: UTF-8
+LazyData: true
