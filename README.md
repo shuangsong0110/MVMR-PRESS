@@ -5,7 +5,8 @@ Implementation codes for "A robust penalized-regression-based method for multiva
 * [Prerequisites](#white_check_mark-prerequisites)
 * [Installation](#hammer_and_wrench-installation)
 * [Run MVMR-PRESS](#rocket-run-mvmr-press)
-* [GWAS summary statistics format](#gwas-summary-statistics-format)
+* [GWAS summary statistics format](#scroll-gwas-summary-statistics-format)
+* [A toy example](#bulb-a-toy-example)
 
 ## :white_check_mark: Prerequisites
 
@@ -34,10 +35,10 @@ res <- run_mvmrpress(summs_exposure = SUMMARY_STATS_FOR_EXPOSURE (required),
 
 ```
 
-- SUMMARY_STATS_FOR_EXPOSURE (required): GWAS summary statistics for exposures, should be a list, each element is a data.frame with headers SNP, A1, A2, BETA, SE (see [GWAS summary statistics format](#gwas-summary-statistics-format)).
+- SUMMARY_STATS_FOR_EXPOSURE (required): GWAS summary statistics for exposures, should be a list, each element is a data.frame with headers SNP, A1, A2, BETA, SE (see [GWAS summary statistics format](#scroll-gwas-summary-statistics-format)).
 
 
-- SUMMARY_STATS_FOR_OUTCOME (required): GWAS summary statistics for the outcome, should be a data.frame with headers SNP, A1, A2, BETA, SE (see [GWAS summary statistics format](#gwas-summary-statistics-format)).
+- SUMMARY_STATS_FOR_OUTCOME (required): GWAS summary statistics for the outcome, should be a data.frame with headers SNP, A1, A2, BETA, SE (see [GWAS summary statistics format](#scroll-gwas-summary-statistics-format)).
 
 
 - INSTRUMENTAL_VARIABLES (required): rsid of the IVs.
@@ -52,7 +53,7 @@ res <- run_mvmrpress(summs_exposure = SUMMARY_STATS_FOR_EXPOSURE (required),
 
 
 
-## GWAS summary statistics format
+## :scroll: GWAS summary statistics format
 Please prepare the GWAS summary statistics for the outcome and each of the exposure  in the following format (including the header line):
 ```
    SNP        A1   A2       BETA         SE         
@@ -71,4 +72,4 @@ Please prepare the GWAS summary statistics for the outcome and each of the expos
 
 **SE**: Standard errors of GWAS effect sizes
 
-##  A toy example
+##  :bulb: A toy example
