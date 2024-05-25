@@ -36,14 +36,8 @@ res <- run_mvmrpress(summs_exposure = SUMMARY_STATS_FOR_EXPOSURE (required),
 
 - SUMMARY_STATS_FOR_EXPOSURE (required): GWAS summary statistics for exposures, should be a list, each element is a data.frame with headers SNP, A1, A2, BETA, SE (see [GWAS summary statistics format](#gwas-summary-statistics-format)).
 
-```
-   SNP        A1   A2       BETA         SE         
- rs4040617    G     A      -0.199       0.12
- rs4075116    C     T       0.646       0.05
- rs9442385    T     G      -0.016       0.37
-    ...
-```
-- SUMMARY_STATS_FOR_OUTCOME (required): GWAS summary statistics for the outcome, should be a data.frame with headers SNP, A1, A2, BETA, SE.
+
+- SUMMARY_STATS_FOR_OUTCOME (required): GWAS summary statistics for the outcome, should be a data.frame with headers SNP, A1, A2, BETA, SE (see [GWAS summary statistics format](#gwas-summary-statistics-format)).
 
 
 - INSTRUMENTAL_VARIABLES (required): rsid of the IVs.
